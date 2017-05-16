@@ -33,5 +33,6 @@ with open ('fights.csv', 'rb') as csvfile:
                         #Error in data
                         print "Data Error in row " + str(i)
                 i += 1
-print "Current standings:", sorted(data,key=itemgetter(1), reverse=True) #Search by second value of 'data' list
+print data[0]
+print data[1]
 #test
