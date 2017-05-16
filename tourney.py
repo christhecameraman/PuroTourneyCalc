@@ -1,3 +1,5 @@
+
+from operator import itemgetter
 import csv
 data = []
 with open ('fighters.csv', 'rb') as csvfile:
@@ -23,4 +25,4 @@ with open ('fights.csv', 'rb') as csvfile:
                         #Error in data
                         print "Data Error in row " + str(i)
                 i += 1
-print data[0]
+print "Current standings:", sorted(data,key=itemgetter(1)) #Search by second value of 'data' list
