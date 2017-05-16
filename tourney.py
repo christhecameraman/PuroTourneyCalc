@@ -5,7 +5,7 @@ data = []
 with open ('fighters.csv', 'rb') as csvfile:
         reader = csv.reader(csvfile, delimiter = ',')
         for row in reader:
-                data.append([row[0], 0, [], []])
+                data.append([row[0], 0, [], [], []])
 
 with open ('fights.csv', 'rb') as csvfile:
         i = 0
@@ -24,12 +24,12 @@ with open ('fights.csv', 'rb') as csvfile:
                 elif (int(row[2]) == 2):
                         #If Draw
                         data[int(row[0])][1] += 1 # Add 2 point per win
-                        data[int(row[0])][2].append(data[int(row[1])][0]) #Add loser to winners beaten list
-                        data[int(row[1])][3].append(data[int(row[0])][0]) #Add winner to losers lost to list
                         data[int(row[1])][1] += 1 # Add 2 point per win
-                        data[int(row[1])][2].append(data[int(row[0])][0]) #Add loser to winners beaten list
-                        data[int(row[0])][3].append(data[int(row[1])][0]) #Add winner to losers lost to list
-                else:
+                        data[int(row[0])][4].append(data[int(row[1])][0]) #Add loser to winners beaten list
+                        data[int(row[1])][4].append(data[int(row[0])][0]) #Add loser to winners beaten list
+
+
+                        else:
                         #Error in data
                         print "Data Error in row " + str(i)
                 i += 1
