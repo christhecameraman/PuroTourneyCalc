@@ -29,7 +29,7 @@ with open ('fights.csv', 'rb') as csvfile:
                         data[int(row[1])][4].append(data[int(row[0])][0]) #Add loser to winners beaten list
 
 
-                        else:
+                else:
                         #Error in data
                         print "Data Error in row " + str(i)
                 i += 1
